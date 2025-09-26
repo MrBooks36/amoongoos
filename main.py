@@ -15,7 +15,7 @@ def main():
     args = parser.parse_args()
     setup_logging()
 
-    compile_main(args.source_file, args.windowe)
+    compile_main(args.source_file, args.windowed)
     if args.icon:
         add_icon_to_executable(args.source_file, args.icon, folder=False)
     if args.uac:
