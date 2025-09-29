@@ -45,17 +45,18 @@ def compile_exe(vcvars_path, temp_c_file, exe_file, python_include, python_lib, 
     info(f"Compiling standalone EXE ({mode} mode, using x64 Developer Command Prompt)...")
     
     compile_command = [
-        "cl",
-        "/nologo",
-        "/Ox",
-        "/MD",
-        f"/I{python_include}",
-        temp_c_file,
-        "/link",
-        f"/OUT:{exe_file}",
-        python_lib,
-        "/NODEFAULTLIB:python3??.lib"
-    ]
+    "cl",
+    "/nologo",
+    "/Ox",
+    "/MT",   # <- static CRT
+    f"/I{python_include}",
+    temp_c_file,
+    "/link",
+    f"/OUT:{exe_file}",
+    python_lib,
+    "/NODEFAULTLIB:python3??.lib"
+]
+
     
     if windowed:
         compile_command += ["/SUBSYSTEM:WINDOWS", "/ENTRY:mainCRTStartup"]

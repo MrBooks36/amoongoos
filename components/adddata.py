@@ -24,7 +24,7 @@ def download_and_extract_zip(url, extract_to='resource_hacker'):
 
 def add_icon_to_executable(name, icon_path, folder):
     name = os.path.abspath(os.path.splitext(os.path.basename(name))[0])
-    cache_path = os.path.expandvars('%LOCALAPPDATA%\\Amoongoos.cache')
+    cache_path = os.path.expandvars('%LOCALAPPDATA%\\Cythontoexe.cache')
     os.makedirs(cache_path, exist_ok=True)
     info(f'Cache path: {cache_path}')
 
@@ -42,7 +42,7 @@ def add_uac_to_executable(name, folder=False):
     Adds a UAC manifest requesting admin privileges to an executable.
     """
     name = os.path.abspath(os.path.splitext(os.path.basename(name))[0])
-    cache_path = os.path.expandvars(r'%LOCALAPPDATA%\Amoongoos.cache')
+    cache_path = os.path.expandvars(r'%LOCALAPPDATA%\Cythontoexe.cache')
     os.makedirs(cache_path, exist_ok=True)
     info(f"Cache path: {cache_path}")
 

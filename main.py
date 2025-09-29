@@ -7,7 +7,7 @@ def setup_logging():
     logging.basicConfig(level=logging.INFO, format='[%(levelname)s] %(message)s')
 
 def main():
-    parser = ArgumentParser(description="Amoongoos - Compile Python scripts into standalone Windows executables.")
+    parser = ArgumentParser(description="Cythontoexe - Compile Python scripts into standalone Windows executables.")
     parser.add_argument("source_file", help="Path to the Python source file to compile.")
     parser.add_argument("--uac", "-uac", action="store_true", help="Make the executable request UAC elevation.")
     parser.add_argument("--icon", "-i", help="Path to the icon file (.ico) to embed in the executable.")
